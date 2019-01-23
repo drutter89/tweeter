@@ -9,6 +9,13 @@ $(document).ready(function() {
        let counter = $(this).siblings('.counter');
        counter.text(totalLen);
 
+       if(totalLen < 0){
+           counter.css('color', 'red');
+       } else if(totalLen > 0){
+           counter.css('color', 'black');
+       }
+    
+
 
 
     //    console.log($(this).siblings('.counter'));

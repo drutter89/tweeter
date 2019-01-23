@@ -29,7 +29,41 @@ textArea {
 
 .new-tweet {
     height: 140px;
-    background-color: rgb(203, 203, 203);
+    background-color: rgb(206, 205, 205);
     border-radius: 25px;
 
+}
+
+#tweet-header{
+    background-color: rgb(228, 221, 221);
+    border-bottom: 1px solid black;
+
+    /* text-align: left; */
+  }
+
+  #tweet-header h2{
+      margin:0;
+
+  }
+
+.tweet-container {
+    height: 140px;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+#tweet-footer {
+    text-align: left;
+    border-top: 1px solid black;
+
+}
+
+#tweet-header p {
+    clear: both;
+}
+
+#twitter-picture {
+    float: left;
+    width: 10%;
+    height: 10%;
 }
