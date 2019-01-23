@@ -37,11 +37,13 @@ textArea {
 
 .tweet-article {
     border-radius:25px;
-    background-color: papayawhip;
+    /* background-color: papayawhip; */
+    overflow: hidden;
+    /* border-style: solid; */
 }
 
 .tweet-header {
-    /* background-color: rgb(228, 221, 221); */
+    background-color: rgb(228, 221, 221);  
     border-bottom: 1px solid black;
     /* border-top: 1px solid black; */
 
@@ -51,13 +53,13 @@ textArea {
     /* text-align: left; */
   }
 
-  .tweet-header h2{
+  .user-name {
       margin:0;
       float: left;
 
   }
 
-#tweet-container {
+.tweet-container {
     /* height: 140px; */
     border-radius: 25px;
 }
@@ -68,30 +70,27 @@ textArea {
         border-radius: 25px;
 } */
 
-#tweet-footer {
+.tweet-footer {
     text-align: left;
     padding-left: 10px;
     border-top: 1px solid black;
     /* border-bottom: 1px solid black; */
-
-
 }
 
-
-
-#twitter-picture {
+.twitter-picture {
     float: left;
     height: 100%;
     padding: 10px;
     border-style: hidden;
     border-radius:25px;
-    
 }
 
-#twitter-handle {
+.twitter-handle {
     margin: auto;
     float: right;
     padding-right: 10px;
     padding-top: 5px;
 }
+
+
 
