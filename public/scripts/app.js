@@ -60,11 +60,11 @@ const tweetData = [
 
  function createTweetElement(tweetData){
    
-    let tweetName = $("<h2>").text(tweetData.user.name);
+    let tweetName = $("<h2>").addClass("user-name").text(tweetData.user.name);
     // console.log(tweetName);
     let tweetPicture = $(`<img>`).addClass("twitter-picture").attr("src", tweetData.user.avatars.regular);
     // console.log(tweetPicture);
-    let tweetHandle = $('<p>').addClass("tweet-handle").text(tweetData.user.handle);
+    let tweetHandle = $('<p>').addClass("twitter-handle").text(tweetData.user.handle);
     // console.log(tweetHandle);
     let tweetHeader = $('<header>').addClass("tweet-header").append(tweetPicture).append(tweetHandle).append(tweetName);
     // console.log(tweetHeader); 
@@ -91,7 +91,7 @@ function renderTweets(tweets) {
       // calls createTweetElement for each tweet
         let tweetElement = createTweetElement(tweet);
         console.log(tweetElement);
-        $('#tweet-container').append(tweetElement);
+        $('.tweet-container').append(tweetElement);
     })
       // takes return value and appends it to the tweets container
 };
