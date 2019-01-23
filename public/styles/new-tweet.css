@@ -62,6 +62,7 @@ textArea {
 .tweet-container {
     /* height: 140px; */
     border-radius: 25px;
+    border-style: solid;
 }
 
 /* #twitter-article {
