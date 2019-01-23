@@ -35,10 +35,15 @@ textArea {
 
 }
 
-#tweet-header{
-    background-color: rgb(228, 221, 221);
+.tweet-article {
+    border-radius:25px;
+    background-color: papayawhip;
+}
+
+.tweet-header {
+    /* background-color: rgb(228, 221, 221); */
     border-bottom: 1px solid black;
-    border-top: 1px solid black;
+    /* border-top: 1px solid black; */
 
     height:100px; /* figure out a way to do this without setting height */
 
@@ -46,22 +51,28 @@ textArea {
     /* text-align: left; */
   }
 
-  #tweet-header h2{
+  .tweet-header h2{
       margin:0;
       float: left;
 
   }
 
-.tweet-container {
-    height: 140px;
-    background-color: rgb(255, 255, 255);
-    
+#tweet-container {
+    /* height: 140px; */
+    border-radius: 25px;
 }
+
+/* #twitter-article {
+        height: 140px;
+        background-color: rgb(54, 228, 147);
+        border-radius: 25px;
+} */
 
 #tweet-footer {
     text-align: left;
+    padding-left: 10px;
     border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
 
 
 }
@@ -71,10 +82,16 @@ textArea {
 #twitter-picture {
     float: left;
     height: 100%;
-    /* padding: 5px; */
+    padding: 10px;
+    border-style: hidden;
+    border-radius:25px;
+    
 }
 
 #twitter-handle {
-    margin:auto;
+    margin: auto;
     float: right;
+    padding-right: 10px;
+    padding-top: 5px;
 }
+
