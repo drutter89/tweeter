@@ -111,6 +111,7 @@ startPage();
 
 $(".compose-button").on('click', function(event){
     $(".new-tweet").slideToggle();
+    $("#tweetText").focus();
 
 })
 
