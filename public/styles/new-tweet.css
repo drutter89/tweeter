@@ -39,7 +39,8 @@ textArea {
     border-radius:25px;
     /* background-color: papayawhip; */
     overflow: hidden;
-    /* border-style: solid; */
+    border-style: solid;
+    margin:20px;
 }
 
 .tweet-header {
@@ -61,8 +62,9 @@ textArea {
 
 .tweet-container {
     /* height: 140px; */
-    border-radius: 25px;
+    /* border-radius: 25px; */
     border-style: solid;
+    /* margin: 40px; */
 }
 
 /* #twitter-article {

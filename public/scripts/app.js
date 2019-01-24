@@ -57,7 +57,6 @@ $(document).ready(function() {
   
   // Test / driver code (temporary)
 
-
  function createTweetElement(tweetData){
    
     let tweetName = $("<h2>").addClass("user-name").text(tweetData.user.name);
@@ -91,7 +90,7 @@ function renderTweets(tweets) {
       // calls createTweetElement for each tweet
         let tweetElement = createTweetElement(tweet);
         console.log(tweetElement);
-        $('.tweet-container').append(tweetElement);
+        $('.tweet-container').prepend(tweetElement);
     })
       // takes return value and appends it to the tweets container
 };
@@ -118,27 +117,31 @@ $('#tweet-form').on('submit', function (event) {
         alert("You can only type 140 characters");
     }
     postTweet(newTweetData);
-  
+    // loadTweets();
+
   })
 
   function loadTweets () {
     $.get('http://localhost:8080/tweets')
     .then(tweets => {
-    //   tweets.forEach(dog => {
-    //     let dogElement = createDogElement(dog)
+    //   tweets.forEach(tweet => {
+        // let tweetElement = createTweetElement(tweet);
         renderTweets(tweets);
       })
     }
-    loadTweets();
 
   function postTweet(tweetData) {
     $.post('http://localhost:8080/tweets', tweetData)
     
-    .then(tweet => {
+    .then(() => {
+      
     //   let tweetElement = createTweetElement(tweet);
+      $("#tweetText").val('');
+      $(".tweet-container").empty();
     //   console.log("This is my tweet element", tweetElement);
+
     //   renderTweet(tweetElement);
-    //   loadTweets();
+      loadTweets();
     })
   }
 
@@ -153,6 +156,10 @@ $('#tweet-form').on('submit', function (event) {
 //       });
 //     });
 //   });
+
+
+console.log("hello world");
+loadTweets();
 
 })
 
