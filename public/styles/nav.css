@@ -30,3 +30,9 @@
     border-radius: 15px;
     border-style:solid;
   }
+
+  .compose-button:hover {
+
+    opacity: 0.5;
+
+  }

@@ -3,7 +3,6 @@
     text-decoration: underline;
     padding-top: 10px;
     margin: 0;
-
 }
 
 .tweetForm {
@@ -41,6 +40,10 @@ textArea {
     overflow: hidden;
     border-style: solid;
     margin:20px;
+}
+
+.tweet-article:hover {
+    opacity: 0.5;
 }
 
 .tweet-header {
