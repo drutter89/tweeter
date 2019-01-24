@@ -21,3 +21,12 @@
     float: left;
     padding-left: 10px;
   }
+
+  .compose-button {
+    float: right;
+    height: 60%;
+    width:8%;
+    margin: 15px;
+    border-radius: 15px;
+    border-style:solid;
+  }
