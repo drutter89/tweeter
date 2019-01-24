@@ -27,6 +27,11 @@ textArea {
     float: left;
 }
 
+.tweet-button:hover {
+    opacity: 0.5;
+    
+}
+
 .new-tweet {
     height: 140px;
     background-color: rgb(206, 205, 205);
