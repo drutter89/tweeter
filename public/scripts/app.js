@@ -86,7 +86,7 @@ const tweetData = [
 function renderTweets(tweets) {
     // loops through tweets
     tweets.forEach(tweet =>{
-        console.log("Test",tweet);
+        // console.log("Test",tweet);
 
       // calls createTweetElement for each tweet
         let tweetElement = createTweetElement(tweet);
@@ -95,7 +95,7 @@ function renderTweets(tweets) {
     })
       // takes return value and appends it to the tweets container
 };
-  renderTweets(tweetData);
+//   renderTweets(tweetData);
   
 //   function createTweetElement(tweet) {
 //     let $tweet = $('<article>').addClass('tweet');
@@ -104,4 +104,56 @@ function renderTweets(tweets) {
 //   }
   
 //   renderTweets(data);
-});
+
+
+$('#tweet-form').on('submit', function (event) {
+    event.preventDefault();
+    let newTweetData = $(this).serialize();
+    console.log("Testing for DATA here",newTweetData); // name=spot&breed=corgi
+  
+    // let newDogName = $('input[name=dog-name]').val()
+  
+    postTweet(newTweetData);
+  
+  })
+
+
+  
+
+  function loadTweets () {
+    $.get('http://localhost:8080/tweets')
+    .then(tweets => {
+    //   tweets.forEach(dog => {
+    //     let dogElement = createDogElement(dog)
+        renderTweets(tweets);
+      })
+    }
+    loadTweets();
+
+  function postTweet(tweetData) {
+    $.post('http://localhost:8080/tweets', tweetData)
+    
+    .then(tweet => {
+    //   let tweetElement = createTweetElement(tweet);
+    //   console.log("This is my tweet element", tweetElement);
+    //   renderTweet(tweetElement);
+      loadTweets();
+    })
+  }
+
+//   $(function() {
+//     var $button = $('#tweet-button');
+//     $button.on('click', function () {
+//       console.log('Button clicked, performing ajax call...');
+//       $.ajax('index.html', { method: 'GET' })
+//       .then(function (indexHtml) {
+//         console.log('Success: ', indexHtml);
+//         $button.replaceWith(indexHtml);
+//       });
+//     });
+//   });
+
+
+
+})
+
