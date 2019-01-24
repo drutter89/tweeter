@@ -104,9 +104,13 @@ function renderTweets(tweets) {
   
 //   renderTweets(data);
 
+function startPage(){
+    $(".new-tweet").slideUp();
+}
+startPage();
+
 $(".compose-button").on('click', function(event){
     $(".new-tweet").slideToggle();
-    // $(".new-tweet").slideDown();
 
 })
 
