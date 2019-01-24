@@ -33,7 +33,10 @@ body {
   padding-bottom: 200px;
 
 }
-
+#error-message {
+  margin:0;
+  color: red;
+}
 
 
 /*

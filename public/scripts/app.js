@@ -104,10 +104,10 @@ function renderTweets(tweets) {
   
 //   renderTweets(data);
 
-function startPage(){
+// function startPage(){
     $(".new-tweet").slideUp();
-}
-startPage();
+// }
+// startPage();
 
 $(".compose-button").on('click', function(event){
     $(".new-tweet").slideToggle();
@@ -121,10 +121,12 @@ $('#tweet-form').on('submit', function (event) {
     console.log("Testing for DATA here",newTweetData); // name=spot&breed=corgi
   
     // let newDogName = $('input[name=dog-name]').val()
-    if (newTweetData == '' || newTweetData === null) {
-        alert("You must type something");
+    if ($("#tweet-form").val() === '' || $("#tweet-form").val() === null) {
+        // alert("You must type something");
+        $("#error-message").text("You have to type something");
     } else if (newTweetData.length > 140){
-        alert("You can only type 140 characters");
+        // alert("You can only type 140 characters");
+        $("#error-message").text("This is too long");
     }
     postTweet(newTweetData);
     // loadTweets();
