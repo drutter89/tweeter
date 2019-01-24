@@ -105,9 +105,14 @@ function renderTweets(tweets) {
 //   renderTweets(data);
 
 // function startPage(){
+    //starts the page with the tweet submission slid up until you click on it 
     $(".new-tweet").slideUp();
 // }
 // startPage();
+
+$("#tweet-form").on("click", function(){
+    $("#error-message").text('');
+})
 
 $(".compose-button").on('click', function(event){
     $(".new-tweet").slideToggle();
