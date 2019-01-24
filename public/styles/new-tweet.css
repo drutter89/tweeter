@@ -100,3 +100,9 @@ textArea {
 
 
 
+.icons {
+    float: right;
+    padding-right: 10px;
+    color: aquamarine;
+    fill: aquamarine;
+}

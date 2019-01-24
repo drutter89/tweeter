@@ -58,7 +58,13 @@ $(document).ready(function() {
   // Test / driver code (temporary)
 
  function createTweetElement(tweetData){
-   
+    let tweetIconDiv    = $(`
+    <div class="icons">
+      <i class="far fa-flag"></i>
+      <i class="fas fa-retweet"></i>
+      <i class="far fa-heart"></i>
+    </div>`);
+    
     let tweetName = $("<h2>").addClass("user-name").text(tweetData.user.name);
     // console.log(tweetName);
     let tweetPicture = $(`<img>`).addClass("twitter-picture").attr("src", tweetData.user.avatars.regular);
@@ -71,10 +77,11 @@ $(document).ready(function() {
     // console.log(tweetBody);
     let postDate = $('<span>').addClass("span").text(tweetData.created_at);
     // console.log(postDate);
-    let tweetFooter = $('<footer>').addClass("tweet-footer").append(postDate);
+    let tweetFooter = $('<footer>').addClass("tweet-footer").append(postDate).append(tweetIconDiv);
     // console.log(tweetFooter);
     let $tweet = $('<article>').addClass("tweet-article").append(tweetHeader).append(tweetBody).append(tweetFooter);
     // console.log($tweet);
+
 
     return $tweet;
     // console.log($tweet);
@@ -89,7 +96,7 @@ function renderTweets(tweets) {
 
       // calls createTweetElement for each tweet
         let tweetElement = createTweetElement(tweet);
-        console.log(tweetElement);
+        // console.log(tweetElement);
         $('.tweet-container').prepend(tweetElement);
     })
 };
@@ -139,12 +146,14 @@ $('#tweet-form').on('submit', function (event) {
     .then(() => {
       $("#tweetText").val('');
       $(".tweet-container").empty();
+      let startTime = Date.now();
+      console.log("time posted in milliseconds", startTime);
       
       loadTweets();
     })
   }
 
-console.log("hello world");
+// console.log("hello world");
 loadTweets();
 
 })
