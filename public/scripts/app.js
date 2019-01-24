@@ -92,17 +92,8 @@ function renderTweets(tweets) {
         console.log(tweetElement);
         $('.tweet-container').prepend(tweetElement);
     })
-      // takes return value and appends it to the tweets container
 };
-//   renderTweets(tweetData);
-  
-//   function createTweetElement(tweet) {
-//     let $tweet = $('<article>').addClass('tweet');
-//     // ...
-//     return $tweet;
-//   }
-  
-//   renderTweets(data);
+
 
 // function startPage(){
     //starts the page with the tweet submission slid up until you click on it 
@@ -123,26 +114,21 @@ $(".compose-button").on('click', function(event){
 $('#tweet-form').on('submit', function (event) {
     event.preventDefault();
     let newTweetData = $(this).serialize();
-    console.log("Testing for DATA here",newTweetData); // name=spot&breed=corgi
+    // console.log("Testing for DATA here",newTweetData); // name=spot&breed=corgi
   
-    // let newDogName = $('input[name=dog-name]').val()
-    if ($("#tweet-form").val() === '' || $("#tweet-form").val() === null) {
-        // alert("You must type something");
+    if ($("#tweetText").val() === '' || $("#tweet-form").val() === null) {
         $("#error-message").text("You have to type something");
-    } else if (newTweetData.length > 140){
-        // alert("You can only type 140 characters");
+    } else if ($("#tweetText").val().length > 140){
         $("#error-message").text("This is too long");
-    }
+    } else{
     postTweet(newTweetData);
-    // loadTweets();
+    }
 
   })
 
   function loadTweets () {
     $.get('http://localhost:8080/tweets')
     .then(tweets => {
-    //   tweets.forEach(tweet => {
-        // let tweetElement = createTweetElement(tweet);
         renderTweets(tweets);
       })
     }
@@ -151,29 +137,12 @@ $('#tweet-form').on('submit', function (event) {
     $.post('http://localhost:8080/tweets', tweetData)
     
     .then(() => {
-      
-    //   let tweetElement = createTweetElement(tweet);
       $("#tweetText").val('');
       $(".tweet-container").empty();
-    //   console.log("This is my tweet element", tweetElement);
-
-    //   renderTweet(tweetElement);
+      
       loadTweets();
     })
   }
-
-//   $(function() {
-//     var $button = $('#tweet-button');
-//     $button.on('click', function () {
-//       console.log('Button clicked, performing ajax call...');
-//       $.ajax('index.html', { method: 'GET' })
-//       .then(function (indexHtml) {
-//         console.log('Success: ', indexHtml);
-//         $button.replaceWith(indexHtml);
-//       });
-//     });
-//   });
-
 
 console.log("hello world");
 loadTweets();
