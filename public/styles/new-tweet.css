@@ -46,6 +46,8 @@ textArea {
     opacity: 0.5;
 }
 
+
+
 .tweet-header {
     background-color: rgb(228, 221, 221);  
     border-bottom: 1px solid black;
@@ -83,6 +85,8 @@ textArea {
     /* border-bottom: 1px solid black; */
 }
 
+
+
 .twitter-picture {
     float: left;
     height: 100%;
@@ -103,6 +107,14 @@ textArea {
 .icons {
     float: right;
     padding-right: 10px;
-    color: aquamarine;
-    fill: aquamarine;
+    color: blue;
+    visibility: hidden;
 }
+.tweet-article:hover .icons {
+    visibility:visible;
+
+}
+
+/* .icons:hover {
+    visibility:visible;
+} */
