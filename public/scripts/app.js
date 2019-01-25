@@ -60,19 +60,8 @@ $(document).ready(function() {
  function createTweetElement(tweetData){
     let todayUnix = tweetData.created_at;
     console.log("Unix in SPan", todayUnix);
-    let tstamp = todayUnix.valueOf();
-    console.log("TSTAMP HERE", tstamp);
     let x = new Date(todayUnix);
     console.log("Testing X here",x);
-    // let timestamp3 = todayUnix.valueOf();
-    let today = new Date();
-    let timestamp2 = today.valueOf();
-    console.log("TODAY HERE",today);
-    console.log('HEYOOOOO',timestamp2);
-    let stamp = today.valueOf();
-    // console.log("Test Stamp Here", stamp);
-    // console.log("TRYING TO TEST TODAY HERE",todayUnix);
-    let timeStamp = new Date(); 
     let tweetIconDiv    = $(`
     <div class="icons">
       <i class="far fa-flag"></i>

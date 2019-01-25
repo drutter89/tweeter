@@ -36,6 +36,8 @@ body {
 #error-message {
   margin:0;
   color: red;
+  padding-right: 50px;
+  /* padding-bottom: 25px; */
 }
 
 
