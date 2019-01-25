@@ -106,16 +106,15 @@ function renderTweets(tweets) {
 };
 
 
-// function startPage(){
-    //starts the page with the tweet submission slid up until you click on it 
-    $(".new-tweet").slideUp();
-// }
-// startPage();
+//starts the page with the tweet submission slid up until you click on it 
+$(".new-tweet").slideUp();
 
+//this makes the error message go away when you click on the text field
+//so if you click submit by mistake and it lets you know you have to type something you can click into the form to type and the message will go away until you submit again. 
 $("#tweet-form").on("click", function(){
     $("#error-message").text('');
 })
-
+//this lets the compose button toggel the tweet form up if you want to type a message and then down if not
 $(".compose-button").on('click', function(event){
     $(".new-tweet").slideToggle();
     $("#tweetText").focus();
