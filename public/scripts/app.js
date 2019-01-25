@@ -58,6 +58,21 @@ $(document).ready(function() {
   // Test / driver code (temporary)
 
  function createTweetElement(tweetData){
+    let todayUnix = tweetData.created_at;
+    console.log("Unix in SPan", todayUnix);
+    let tstamp = todayUnix.valueOf();
+    console.log("TSTAMP HERE", tstamp);
+    let x = new Date(todayUnix * 1000);
+    console.log("Testing X here",x);
+    // let timestamp3 = todayUnix.valueOf();
+    let today = new Date();
+    let timestamp2 = today.valueOf();
+    console.log("TODAY HERE",today);
+    console.log('HEYOOOOO',timestamp2);
+    let stamp = today.valueOf();
+    // console.log("Test Stamp Here", stamp);
+    // console.log("TRYING TO TEST TODAY HERE",todayUnix);
+    let timeStamp = new Date(); 
     let tweetIconDiv    = $(`
     <div class="icons">
       <i class="far fa-flag"></i>
@@ -75,7 +90,7 @@ $(document).ready(function() {
     // console.log(tweetHeader); 
     let tweetBody = $('<p>').addClass("test-tweet").text(tweetData.content.text);
     // console.log(tweetBody);
-    let postDate = $('<span>').addClass("span").text(tweetData.created_at);
+    let postDate = $('<span>').addClass("span").text(x);
     // console.log(postDate);
     let tweetFooter = $('<footer>').addClass("tweet-footer").append(postDate).append(tweetIconDiv);
     // console.log(tweetFooter);
