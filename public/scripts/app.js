@@ -62,7 +62,7 @@ $(document).ready(function() {
     console.log("Unix in SPan", todayUnix);
     let tstamp = todayUnix.valueOf();
     console.log("TSTAMP HERE", tstamp);
-    let x = new Date(todayUnix * 1000);
+    let x = new Date(todayUnix);
     console.log("Testing X here",x);
     // let timestamp3 = todayUnix.valueOf();
     let today = new Date();
